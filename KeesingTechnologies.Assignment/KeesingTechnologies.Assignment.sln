@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesingTechnologies.Assignm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesingTechnologies.Assignment.Web", "KeesingTechnologies.Assignment.Web\KeesingTechnologies.Assignment.Web.csproj", "{B1A6B5B8-C4B9-4436-87F2-A8A09FA51F3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesingTechnologies.Assignment.Service", "KeesingTechnologies.Assignment.Service\KeesingTechnologies.Assignment.Service.csproj", "{956E5665-CDA4-4FA1-ACD1-B61F97017A13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{B1A6B5B8-C4B9-4436-87F2-A8A09FA51F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1A6B5B8-C4B9-4436-87F2-A8A09FA51F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1A6B5B8-C4B9-4436-87F2-A8A09FA51F3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{956E5665-CDA4-4FA1-ACD1-B61F97017A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{956E5665-CDA4-4FA1-ACD1-B61F97017A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{956E5665-CDA4-4FA1-ACD1-B61F97017A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{956E5665-CDA4-4FA1-ACD1-B61F97017A13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +65,6 @@ Global
 		{930F98D6-F500-476A-8C81-B01E4CFE0BB4} = {E6A2CEA5-04B8-4515-8738-98D47AAC9C09}
 		{70E81C93-CAF1-4A83-8F2B-B2100BC57C16} = {64EFB9DB-561C-4C6B-A07D-DC4D2ACA18BF}
 		{B1A6B5B8-C4B9-4436-87F2-A8A09FA51F3A} = {4B7743D2-93F2-4CD8-9E6F-6168018C2578}
+		{956E5665-CDA4-4FA1-ACD1-B61F97017A13} = {E6A2CEA5-04B8-4515-8738-98D47AAC9C09}
 	EndGlobalSection
 EndGlobal

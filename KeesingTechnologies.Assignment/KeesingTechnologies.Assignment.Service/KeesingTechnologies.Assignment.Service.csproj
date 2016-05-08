@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{930F98D6-F500-476A-8C81-B01E4CFE0BB4}</ProjectGuid>
+    <ProjectGuid>{956E5665-CDA4-4FA1-ACD1-B61F97017A13}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KeesingTechnologies.Assignment.Data</RootNamespace>
-    <AssemblyName>KeesingTechnologies.Assignment.Data</AssemblyName>
+    <RootNamespace>KeesingTechnologies.Assignment.Service</RootNamespace>
+    <AssemblyName>KeesingTechnologies.Assignment.Service</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,12 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\IUnitOfWork.cs" />
-    <Compile Include="EntityFramework\AssignmentDataContext.cs" />
-    <Compile Include="EntityFramework\EFConfigurations\DocumentConfig.cs" />
-    <Compile Include="EntityFramework\EFConfigurations\ImageConfig.cs" />
-    <Compile Include="InMemoryConcret\AssignmentDataContext.cs" />
-    <Compile Include="InMemoryConcret\FakeDbSet.cs.cs" />
+    <Compile Include="Base\AssignmentService.cs" />
+    <Compile Include="Base\IAssignmentService.cs" />
+    <Compile Include="DocumentService.cs" />
+    <Compile Include="Interfaces\IDocumentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +67,10 @@
     <ProjectReference Include="..\KeesingTechnologies.Assignment.Core\KeesingTechnologies.Assignment.Core.csproj">
       <Project>{7e1f84c9-3441-4e1d-b49b-f3631b2413f5}</Project>
       <Name>KeesingTechnologies.Assignment.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KeesingTechnologies.Assignment.Data\KeesingTechnologies.Assignment.Data.csproj">
+      <Project>{930f98d6-f500-476a-8c81-b01e4cfe0bb4}</Project>
+      <Name>KeesingTechnologies.Assignment.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

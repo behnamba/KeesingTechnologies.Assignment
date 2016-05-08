@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using KeesingTechnologies.Assignment.Web.Helper;
 
 namespace KeesingTechnologies.Assignment.Web
 {
@@ -14,6 +15,9 @@ namespace KeesingTechnologies.Assignment.Web
     {
         void Application_Start(object sender, EventArgs e)
         {
+            // IOC Initilization
+            Bootstraper.InitialDependencyMappings();
+
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

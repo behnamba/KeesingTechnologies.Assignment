@@ -9,16 +9,18 @@ namespace KeesingTechnologies.Assignment.Web
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-
             // Web API routes
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "v1/{controller}/{Action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // always return json
+            var json = config.Formatters.JsonFormatter;
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
     }
 }
