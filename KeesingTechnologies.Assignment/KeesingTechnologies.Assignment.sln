@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{7CEE20A8-7C04-4741-B04B-DF7461D5E609}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Keesing Technologies Test.docx = ..\..\Keesing Technologies Test.docx
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{4B7743D2-93F2-4CD8-9E6F-6168018C2578}"
 EndProject

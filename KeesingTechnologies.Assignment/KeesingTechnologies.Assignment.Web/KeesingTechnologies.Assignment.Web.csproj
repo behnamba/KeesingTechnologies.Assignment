@@ -173,10 +173,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\Bootstraper.cs" />
-    <Compile Include="Migrations\201605081315401_Initial migration, create database.cs" />
-    <Compile Include="Migrations\201605081315401_Initial migration, create database.Designer.cs">
-      <DependentUpon>201605081315401_Initial migration, create database.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocumentDetailsViewModel.cs" />
     <Compile Include="Models\DocumentViewModel.cs" />
@@ -220,11 +216,6 @@
       <Project>{956e5665-cda4-4fa1-acd1-b61f97017a13}</Project>
       <Name>KeesingTechnologies.Assignment.Service</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605081315401_Initial migration, create database.resx">
-      <DependentUpon>201605081315401_Initial migration, create database.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

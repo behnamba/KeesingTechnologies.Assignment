@@ -11,7 +11,8 @@ namespace KeesingTechnologies.Assignment.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(KeesingTechnologies.Assignment.Data.EntityFramework.AssignmentDataContext context)
@@ -69,9 +70,7 @@ namespace KeesingTechnologies.Assignment.Data.Migrations
                 };
                 context.Documents.Add(d2);
                 context.SaveChanges();
-            }
-
-           
+            }           
         }
     }
 }
