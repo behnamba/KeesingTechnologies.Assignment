@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KeesingTechnologies.Assignment.Common
+namespace KeesingTechnologies.Assignment.Common.DDD
 {
-    public class Class1
+    public interface IAggregateRoot
     {
     }
 }

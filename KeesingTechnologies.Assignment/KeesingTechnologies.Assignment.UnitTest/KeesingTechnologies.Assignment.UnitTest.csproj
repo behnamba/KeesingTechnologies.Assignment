@@ -50,8 +50,19 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Domain\ImageUnitTest.cs" />
+    <Compile Include="Domain\ProductUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KeesingTechnologies.Assignment.Common\KeesingTechnologies.Assignment.Common.csproj">
+      <Project>{7cbbfe9b-62b1-42dd-a006-f7c8229ee060}</Project>
+      <Name>KeesingTechnologies.Assignment.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KeesingTechnologies.Assignment.Core\KeesingTechnologies.Assignment.Core.csproj">
+      <Project>{7e1f84c9-3441-4e1d-b49b-f3631b2413f5}</Project>
+      <Name>KeesingTechnologies.Assignment.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
