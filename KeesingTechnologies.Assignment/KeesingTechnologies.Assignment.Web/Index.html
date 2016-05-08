@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html ng-app="assignmentApp">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Content/css/ui-grid.min.css" rel="stylesheet" />
+    <link href="Content/css/loading.css" rel="stylesheet" />
+
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-animate.min.js"></script>
+    <script src="Scripts/ui-bootstrap-tpls.min.js"></script>
+    <script src="Scripts/ui-grid.min.js"></script>
+    <script src="app/appModule.js"></script>
+    <script src="app/mainController.js"></script>
+    <script src="app/assignmentBackendService.js"></script>
+</head>
+<body class="container-fluid" ng-controller="assignmentMainController as main">
+    <header>
+        <h3 style="color:cornflowerblue"> {{main.title}}</h3>
+    </header>
+
+    <main>
+        <h5>Documents: click on documents to see the url list</h5>
+        <div id="dcoumentGrid" ui-grid="main.dcoumentGridOptions" ui-grid-selection>
+            <div class="grid-msg-overlay" ng-hide="!main.documentLoading">
+                <div class="msg">
+                    <span>
+                        Loading Data...
+                        <i class="fa fa-spinner fa-spin"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+
+        <h5>Url List</h5>
+        <div id="documentDetailsGrid" >
+            <div style="clear:both" ng-repeat="i in main.selectedDocument.Urls">
+                <span>{{i}}</span>
+            </div>
+            <div class="grid-msg-overlay" ng-hide="!main.documentDetailsLoading">
+                <div class="msg">
+                    <span>
+                        Loading Data...
+                        <i class="fa fa-spinner fa-spin"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

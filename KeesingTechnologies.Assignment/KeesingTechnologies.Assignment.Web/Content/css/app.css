@@ -1,0 +1,130 @@
+﻿body {
+    font-size: 12px;
+}
+
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+.cat {
+    width: 1200px;
+    height: 250px;
+}
+
+    .cat .cat-windfarms-grid {
+    }
+
+    .cat .cat-turbines-grid {
+    }
+
+    .cat .cat-outages-grid {
+    }
+
+    .cat .cat-alarms-grid {
+    }
+
+
+.panel-heading {
+    min-height: 50px;
+}
+
+.panel-group {
+    width: 1200px;
+}
+
+.customPeriod {
+}
+
+    .customPeriod div {
+        padding: 5px;
+    }
+
+#validityTime {
+    vertical-align: middle;
+    padding-right: 10px;
+    max-width: 235px;
+}
+
+    #validityTime input {
+        min-height: 30px;
+    }
+
+.ui-grid-cell-contents {
+    text-align: center;
+}
+
+.panel-body {
+    padding: 0px;
+}
+
+.staticData {
+    color: red;
+}
+
+.grid-msg-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    vertical-align: middle;
+}
+
+    .grid-msg-overlay .msg {
+        opacity: 1;
+        position: absolute;
+        background-color: #eee;
+        border: 1px solid #555;
+        text-align: center;
+        font-size: large;
+        top: 20%;
+        left: 40%;
+        width: 20%;
+        height: 50%;
+        display: table;
+        border-radius: 10px;
+    }
+
+        .grid-msg-overlay .msg span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+.checkbox + .checkbox {
+    margin-top: 0px;
+}
+
+.checkbox {
+    margin: 0px;
+    margin-bottom: 10px;
+    min-width: 180px;
+}
+
+#addAdjustment {
+}
+
+    #addAdjustment .input-group {
+        width: 300px;
+    }
+
+
+select:invalid {
+    color: gray;
+}
+
+.error {
+    color: red;
+}
+
+.input-group {
+    margin-bottom: 5px;
+}
+
+.btnGrids {
+    line-height: 0.5;
+}
+
+/*.cat-accordion-header-title{
+    font-weight: bold;
+}*/
