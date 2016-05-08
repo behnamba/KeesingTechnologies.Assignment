@@ -1,4 +1,5 @@
-﻿using KeesingTechnologies.Assignment.Service.Interfaces;
+﻿using KeesingTechnologies.Assignment.Core.Document;
+using KeesingTechnologies.Assignment.Service.Interfaces;
 using KeesingTechnologies.Assignment.Web.Helper;
 using KeesingTechnologies.Assignment.Web.Models;
 using System;
@@ -17,7 +18,7 @@ namespace KeesingTechnologies.Assignment.Web.Controllers
         IDocumentService _DocumentService;
 
         public DocumentController()
-        {
+        {   
             _DocumentService = Bootstraper.IDocumentService;
         }
 
@@ -25,12 +26,12 @@ namespace KeesingTechnologies.Assignment.Web.Controllers
         {
             var model = await _DocumentService.GetAllInclude(p => p.Images);
 
-            var responce= model.Select(p => new DocumentViewModel
+            var responce = model.Select(p => new DocumentViewModel
             {
                 Id = p.Id,
                 UserName = p.UserName,
                 ScanDate = p.ScanDate,
-                ImageNumbers = p.Images.Count
+                ImageCount = p.Images.Count
             }).ToList();
 
             if (responce == null)
@@ -46,11 +47,16 @@ namespace KeesingTechnologies.Assignment.Web.Controllers
         {
             var model = await _DocumentService.Find(p => p.Id == id, j => j.Images);
 
-            var responce =  model.Select(p => new DocumentDetailsViewModel
+            var responce = model.Select(p => new DocumentDetailsViewModel
             {
                 UserName = p.UserName,
                 ScanDate = p.ScanDate,
-                Urls = p.Images.OrderBy(q => q.PageNumber).Select(f => f.Url).ToList()
+                Images = p.Images.Select(f => new ImageViewModel
+                {
+                    Url = f.Url,
+                    PageNumber = f.PageNumber
+                }).OrderBy(q => q.PageNumber)
+                .ToList()
             }).SingleOrDefault();
 
             if (responce == null)
@@ -59,6 +65,27 @@ namespace KeesingTechnologies.Assignment.Web.Controllers
             }
 
             return responce;
+        }
+
+        public bool Post(DocumentDetailsViewModel model)
+        {
+            if (ModelState.IsValid == false)
+            {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+
+            try
+            {
+                _DocumentService.Add(model.ToDocument());
+                _DocumentService.Save();
+            }
+            catch
+            {
+                throw new HttpResponseException(HttpStatusCode.ExpectationFailed);
+            }
+
+            //
+            return true;
         }
     }
 }

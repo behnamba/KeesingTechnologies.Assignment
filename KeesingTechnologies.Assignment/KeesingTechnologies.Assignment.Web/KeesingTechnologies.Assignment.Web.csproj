@@ -180,6 +180,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocumentDetailsViewModel.cs" />
     <Compile Include="Models\DocumentViewModel.cs" />
+    <Compile Include="Models\ImageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

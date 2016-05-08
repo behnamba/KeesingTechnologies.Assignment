@@ -37,17 +37,25 @@
         </div>
         <div style="clear:both"></div>
 
-        <h5>Url List</h5>
-        <div id="documentDetailsGrid" >
-            <div style="clear:both" ng-repeat="i in main.selectedDocument.Urls">
-                <span>{{i}}</span>
-            </div>
-            <div class="grid-msg-overlay" ng-hide="!main.documentDetailsLoading">
-                <div class="msg">
-                    <span>
-                        Loading Data...
-                        <i class="fa fa-spinner fa-spin"></i>
-                    </span>
+        <div id="documentDetailsGrid" ng-show="main.documentSelected">
+            <div>
+                <h5>Url List</h5>
+                <div style="clear:both" ng-repeat="i in main.selectedDocument.Images">
+                    <div style="clear:both">
+                        <br />
+                        <span>{{i.PageNumber}} : {{i.Url}}</span>
+                        <br />
+                        <img src="{{i.Url}}" style="max-width:100px;max-height:100px"></img>
+                        <br />
+                    </div>
+                </div>
+                <div class="grid-msg-overlay" ng-hide="!main.documentDetailsLoading">
+                    <div class="msg">
+                        <span>
+                            Loading Data...
+                            <i class="fa fa-spinner fa-spin"></i>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

@@ -8,6 +8,7 @@ angular.module("assignmentApp").controller("assignmentMainController", ["$scope"
             // to optimize the performance of the request 
             var documentCanceler = $q.defer();
             var documentDetailsCanceler = $q.defer();
+            var postDocumentsCanceler = $q.defer();
 
             // show loading 
             main.documentLoading = true;
@@ -60,5 +61,6 @@ angular.module("assignmentApp").controller("assignmentMainController", ["$scope"
             $scope.$on('$destroy', function () {
                 documentCanceler.resolve();
                 documentDetailsCanceler.resolve();
+                postDocumentsCanceler.resolve();
             });
         }]);
