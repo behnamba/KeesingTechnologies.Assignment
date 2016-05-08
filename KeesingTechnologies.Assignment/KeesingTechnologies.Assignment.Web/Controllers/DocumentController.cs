@@ -25,13 +25,20 @@ namespace KeesingTechnologies.Assignment.Web.Controllers
         {
             var model = await _DocumentService.GetAllInclude(p => p.Images);
 
-            return model.Select(p => new DocumentViewModel
+            var responce= model.Select(p => new DocumentViewModel
             {
                 Id = p.Id,
                 UserName = p.UserName,
                 ScanDate = p.ScanDate,
                 ImageNumbers = p.Images.Count
             }).ToList();
+
+            if (responce == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+
+            return responce;
         }
 
         [OutputCache(Duration = int.MaxValue, VaryByParam = "id")]
@@ -39,12 +46,19 @@ namespace KeesingTechnologies.Assignment.Web.Controllers
         {
             var model = await _DocumentService.Find(p => p.Id == id, j => j.Images);
 
-            return model.Select(p => new DocumentDetailsViewModel
+            var responce =  model.Select(p => new DocumentDetailsViewModel
             {
                 UserName = p.UserName,
                 ScanDate = p.ScanDate,
                 Urls = p.Images.OrderBy(q => q.PageNumber).Select(f => f.Url).ToList()
-            }).Single();
+            }).SingleOrDefault();
+
+            if (responce == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+
+            return responce;
         }
     }
 }
